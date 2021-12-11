@@ -1,0 +1,12 @@
+# Mac
+.DS_Store
+
+# IDE, Editor
+.idea
+.vscode
+
+# Project
+vendor
+composer.lock
+phpunit.xml
+.phpunit.result.cache
