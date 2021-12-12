@@ -1,12 +1,15 @@
-[![PHPStan Level 9](https://img.shields.io/badge/PHPStan-Level%209-brightgreen)](https://phpstan.org/user-guide/rule-levels)
-[![GitHub Action Result](https://img.shields.io/github/workflow/status/yamadashy/laravel-blade-minify-directive/Tests?style=flat&logo=github)](https://github.com/yamadashy/laravel-blade-minify-directive/actions)
-
 <div align="center">
-  <h3 align="center">Laravel Blade Minify Directive</h3>
-  <p align="center">
-    <code>@minify</code> directive to partially compress HTML.
-  </p>
+  <h3>Laravel Blade Minify Directive</h3>
+  <code>@minify</code> directive to partially compress HTML.
 </div>
+<br>
+<p align="center">
+  <a href="https://github.com/yamadashy/laravel-blade-minify-directive/actions"><img src="https://github.com/yamadashy/laravel-blade-minify-directive/actions/workflows/tests.yml/badge.svg" alt="Test Status"></a>
+  <a href="https://phpstan.org/user-guide/rule-levels"><img src="https://img.shields.io/badge/PHPStan-Level%209-brightgreen" alt="Code Analyze Status"></a>
+  <a href="https://packagist.org/packages/yamadashy/laravel-blade-minify-directive"><img src="https://img.shields.io/packagist/v/yamadashy/laravel-blade-minify-directive" alt="Latest Stable Version"></a>
+  <a href="https://github.com/yamadashy/laravel-blade-minify-directive/blob/main/LICENSE.txt"><img src="https://img.shields.io/packagist/l/yamadashy/laravel-blade-minify-directive" alt="License"></a>
+</p>
+
 
 # Motivation
 There are various minify libraries available, all of which minify the entire page.
@@ -25,12 +28,14 @@ composer require yamadashy/laravel-blade-minify-directive
 Enclose the part you want to minify with `@minify` and `@endminify`.
 ```blade
 <div>
+    <!-- comment will not remove -->
     <div>
         <div>not minified</div>
     </div>
 </div>
 @minify
 <div>
+    <!-- comment will remove -->
     <div>
         <div>minified</div>
     </div>
@@ -44,6 +49,7 @@ Enclose the part you want to minify with `@minify` and `@endminify`.
 Converted like this.
 ```html
 <div>
+    <!-- comment will not remove -->
     <div>
         <div>not minified</div>
     </div>
