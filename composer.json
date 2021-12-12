@@ -35,7 +35,7 @@
     }
   },
   "scripts": {
-    "test": "vendor/bin/phpunit",
+    "test": "vendor/bin/phpunit --colors=always",
     "analyze": "vendor/bin/phpstan analyze"
   },
   "config": {

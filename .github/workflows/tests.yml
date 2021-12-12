@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
+      fail-fast: true
       matrix:
         php-version: ['7.1.3', '7.2', '7.3', '7.4', '8.0', '8.1']
         laravel-version: ['5.7.*', '5.8.*', '^6.0', '^7.0', '^8.0']
@@ -28,13 +29,15 @@ jobs:
           - { php-version: '8.1', laravel-version: '^7.0' }
 
     steps:
+      - name: Git Checkout
+        uses: actions/checkout@v2
+
       - name: Setup PHP ${{ matrix.php-version }}
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php-version }}
-
-      - name: Git Checkout
-        uses: actions/checkout@v2
+          tools: composer
+          coverage: none
 
       - name: Composer self-update
         run: composer self-update
@@ -43,9 +46,9 @@ jobs:
         run: composer require laravel/framework:${{ matrix.laravel-version }}
 
       - name: Install dependencies
-        run: composer install --no-interaction --prefer-source
+        run: composer update --no-interaction --prefer-dist --no-progress --ansi
 
-      - name: Run Test
+      - name: Run Unit Test
         run: composer test
 
       - name: Run Code Analyze
