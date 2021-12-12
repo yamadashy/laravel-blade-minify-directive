@@ -215,7 +215,7 @@ class MinifyDirectiveTest extends TestCase
      * @param string $bladeFilePath
      * @param string $expectedOutputFilePath
      */
-    public function testBladeFile(string $bladeFilePath, string $expectedOutputFilePath)
+    public function testBladeFile(string $bladeFilePath, string $expectedOutputFilePath): void
     {
         $blade = file_get_contents($bladeFilePath);
 
