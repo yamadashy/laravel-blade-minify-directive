@@ -12,3 +12,8 @@ jobs:
       - uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php-version }}
+      - uses: actions/checkout@v2
+      - run: composer self-update
+      - run: 'composer require laravel/framework:${{ matrix.laravel-version }}'
+      - run: composer install --no-interaction --prefer-source
+      - run: php vendor/bin/phpunit
