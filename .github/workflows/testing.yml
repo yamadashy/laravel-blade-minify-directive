@@ -16,4 +16,5 @@ jobs:
       - run: composer self-update
       - run: 'composer require laravel/framework:${{ matrix.laravel-version }}'
       - run: composer install --no-interaction --prefer-source
-      - run: php vendor/bin/phpunit
+      - run: composer test
+      - run: composer analyze
