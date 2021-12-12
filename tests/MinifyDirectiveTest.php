@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace Yamadashy\MinifyDirective\Tests;
 
 use Illuminate\View\Compilers\BladeCompiler;
+use LogicException;
 use Yamadashy\MinifyDirective\MinifyDirectiveServiceProvider;
 
 class MinifyDirectiveTest extends TestCase
@@ -21,13 +22,13 @@ class MinifyDirectiveTest extends TestCase
         $bladeCompiler = app('blade.compiler');
         $compiled = $bladeCompiler->compileString($blade);
 
-        $this->assertSame($expectedCompiled, $compiled);
+        self::assertSame($expectedCompiled, $compiled);
 
         ob_start();
         eval(' ?>'.$compiled.'<?php ');
         $evalOutput = ob_get_clean();
 
-        $this->assertSame($expectedEval, $evalOutput);
+        self::assertSame($expectedEval, $evalOutput);
     }
 
     /**
@@ -220,7 +221,7 @@ class MinifyDirectiveTest extends TestCase
         $blade = file_get_contents($bladeFilePath);
 
         if ($blade === false) {
-            throw new \LogicException('File not found. path: '.$bladeFilePath);
+            throw new LogicException('File not found. path: '.$bladeFilePath);
         }
 
         /** @var BladeCompiler $bladeCompiler */
@@ -232,7 +233,7 @@ class MinifyDirectiveTest extends TestCase
         $evalOutput = ob_get_clean();
 
         $expectedOutput = file_get_contents($expectedOutputFilePath);
-        $this->assertSame($expectedOutput, $evalOutput);
+        self::assertSame($expectedOutput, $evalOutput);
     }
 
     /**

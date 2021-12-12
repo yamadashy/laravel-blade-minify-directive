@@ -1,0 +1,48 @@
+name: Test
+
+on: [push]
+
+jobs:
+  test:
+    name: Test PHP ${{ matrix.php-version }}, Laravel ${{ matrix.laravel-version }}
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        php-version: ['7.1.3', '7.2', '7.3', '7.4', '8.0', '8.1']
+        laravel-version: ['5.7.*', '5.8.*', '^6.0', '^7.0', '^8.0']
+        exclude:
+          - { php-version: '7.1.3', laravel-version: '^6.0' }
+          - { php-version: '7.1.3', laravel-version: '^7.0' }
+          - { php-version: '7.1.3', laravel-version: '^8.0' }
+          - { php-version: '7.2', laravel-version: '^8.0' }
+          - { php-version: '8.0', laravel-version: '5.7.*' }
+          - { php-version: '8.0', laravel-version: '5.8.*' }
+          - { php-version: '8.1', laravel-version: '5.7.*' }
+          - { php-version: '8.1', laravel-version: '5.8.*' }
+          - { php-version: '8.1', laravel-version: '^6.0' }
+          - { php-version: '8.1', laravel-version: '^7.0' }
+
+    steps:
+      - name: Setup PHP ${{ matrix.php-version }}
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+
+      - name: Git Checkout
+        uses: actions/checkout@v2
+
+      - name: Composer self-update
+        run: composer self-update
+
+      - name: Install Laravel ${{ matrix.laravel-version }}
+        run: composer require laravel/framework:${{ matrix.laravel-version }}
+
+      - name: Install dependencies
+        run: composer install --no-interaction --prefer-source
+
+      - name: Run Test
+        run: composer test
+
+      - name: Run Code Analyze
+        run: composer analyze

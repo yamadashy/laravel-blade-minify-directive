@@ -12,7 +12,7 @@ class Minifier
      * @param string $html
      * @return string
      */
-    public static function minify($html): string
+    public static function minify(string $html): string
     {
         return Minify_HTML::minify($html);
     }

@@ -16,7 +16,7 @@ class MinifierTest extends TestCase
     public function testMinify(string $originalHtml, string $expectedMinified): void
     {
         $minifiedHtml = Minifier::minify($originalHtml);
-        $this->assertSame($expectedMinified, $minifiedHtml);
+        self::assertSame($expectedMinified, $minifiedHtml);
     }
 
     /**
