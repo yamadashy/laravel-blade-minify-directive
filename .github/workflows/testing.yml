@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        php-version: ['7.3', '7.4']
+        php-version: ['7.1.3', '7.2', '7.3', '7.4']
         laravel-version: ['5.7.*', '5.8.*', '^6.0', '^7.0', '^8.0']
     steps:
       - uses: shivammathur/setup-php@v2
