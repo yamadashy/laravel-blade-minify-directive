@@ -15,7 +15,10 @@ However, minifying the whole page may break the design, making it difficult to i
 If you want to apply it to a part of the page instead of the whole page, this library is useful.
 
 # Installation
-WIP
+You can install the package via composer:
+```
+composer require yamadashy/laravel-blade-minify-directive
+```
 
 # Usage
 
