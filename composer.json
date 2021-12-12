@@ -35,8 +35,8 @@
     }
   },
   "scripts": {
-    "test": "vendor/bin/phpunit --colors=always",
-    "analyze": "vendor/bin/phpstan analyze"
+    "test": "phpunit --colors=always",
+    "analyze": "phpstan analyze --ansi"
   },
   "config": {
     "sort-packages": true
