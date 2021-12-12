@@ -1,5 +1,5 @@
 ![PHPStan Level 9](https://img.shields.io/badge/PHPStan-Level%209-brightgreen)
-![GitHub Action Result](https://img.shields.io/github/workflow/status/yamadashy/laravel-blade-minify-directive/workflows?style=flat&logo=github)
+![GitHub Action Result](https://img.shields.io/github/workflow/status/yamadashy/laravel-blade-minify-directive/Test?style=flat&logo=github)
 
 <div align="center">
   <h3 align="center">Laravel Blade Minify Directive</h3>
