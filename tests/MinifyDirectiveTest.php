@@ -210,5 +210,40 @@ class MinifyDirectiveTest extends TestCase
         ];
     }
 
+    /**
+     * @dataProvider  dataProviderForTestBladeFile
+     * @param string $bladeFilePath
+     * @param string $expectedOutputFilePath
+     */
+    public function testBladeFile(string $bladeFilePath, string $expectedOutputFilePath): void
+    {
+        $blade = file_get_contents($bladeFilePath);
+
+        if ($blade === false) {
+            throw new \LogicException('File not found. path: '.$bladeFilePath);
+        }
+
+        /** @var BladeCompiler $bladeCompiler */
+        $bladeCompiler = app('blade.compiler');
+        $compiled = $bladeCompiler->compileString($blade);
+
+        ob_start();
+        eval(' ?>'.$compiled.'<?php ');
+        $evalOutput = ob_get_clean();
+
+        $expectedOutput = file_get_contents($expectedOutputFilePath);
+        $this->assertSame($expectedOutput, $evalOutput);
+    }
+
+    /**
+     * @return string[][]
+     */
+    public function dataProviderForTestBladeFile(): array
+    {
+        return [
+            [__DIR__.'/TestResources/test1.blade.php', __DIR__.'/TestResources/test1output.html'],
+            [__DIR__.'/TestResources/test2.blade.php', __DIR__.'/TestResources/test2output.html'],
+        ];
+    }
 
 }
