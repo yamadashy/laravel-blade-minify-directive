@@ -21,7 +21,8 @@
     "mrclay/minify": "^3.0"
   },
   "require-dev": {
-    "orchestra/testbench": "~3.7|^4.0|^5.0|^6.0"
+    "orchestra/testbench": "~3.7|^4.0|^5.0|^6.0",
+    "phpstan/phpstan": "^1.2"
   },
   "autoload": {
     "psr-4": {
