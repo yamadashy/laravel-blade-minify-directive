@@ -1,13 +1,12 @@
 <div align="center">
-  <h3>Laravel Blade Minify Directive</h3>
+  <h1>Laravel Blade Minify Directive</h1>
   <code>@minify</code> directive to partially compress HTML.
 </div>
 <br>
 <p align="center">
   <a href="https://github.com/yamadashy/laravel-blade-minify-directive/actions"><img src="https://img.shields.io/github/workflow/status/yamadashy/laravel-blade-minify-directive/Tests?label=tests&logo=github" alt="Test Status"></a>
-  <a href="https://phpstan.org/user-guide/rule-levels"><img src="https://img.shields.io/badge/PHPStan-Level%209-brightgreen" alt="Code Analyze Status"></a>
-  <a href="https://packagist.org/packages/yamadashy/laravel-blade-minify-directive"><img src="https://img.shields.io/packagist/v/yamadashy/laravel-blade-minify-directive" alt="Latest Stable Version"></a>
-  <a href="https://github.com/yamadashy/laravel-blade-minify-directive/blob/main/LICENSE.txt"><img src="https://img.shields.io/github/license/yamadashy/laravel-blade-minify-directive" alt="License"></a>
+  <a href="https://packagist.org/packages/yamadashy/laravel-blade-minify-directive"><img src="https://poser.pugx.org/yamadashy/laravel-blade-minify-directive/v/stable.svg" alt="Latest Version"></a>
+  <a href="https://github.com/yamadashy/laravel-blade-minify-directive/blob/master/LICENSE.md"><img src="https://poser.pugx.org/yamadashy/laravel-blade-minify-directive/license.svg" alt="License"></a>
 </p>
 
 
