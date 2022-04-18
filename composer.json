@@ -22,8 +22,7 @@
   },
   "require-dev": {
     "orchestra/testbench": "~3.7|^4.0|^5.0|^6.0",
-    "phpstan/phpstan": "^1.2",
-    "yamadashy/phpstan-formatter-friendly": "^0.1.0"
+    "phpstan/phpstan": "^1.2"
   },
   "autoload": {
     "psr-4": {
@@ -37,7 +36,7 @@
   },
   "scripts": {
     "test": "phpunit --colors=always",
-    "analyze": "phpstan analyze --error-format friendly --ansi"
+    "analyze": "phpstan analyze --ansi"
   },
   "config": {
     "sort-packages": true
