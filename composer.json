@@ -35,8 +35,12 @@
     }
   },
   "scripts": {
-    "test": "phpunit --colors=always",
-    "analyze": "phpstan analyze --ansi"
+    "test": [
+      "@test:types",
+      "@test:unit"
+    ],
+    "test:unit": "phpunit",
+    "test:types": "phpstan analyze -c phpstan.neon.dist"
   },
   "config": {
     "sort-packages": true
