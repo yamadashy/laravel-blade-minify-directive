@@ -1,3 +1,6 @@
+includes:
+    - ./vendor/yamadashy/phpstan-formatter-friendly/extension.neon
+
 parameters:
     paths:
         - src
