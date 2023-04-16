@@ -4,7 +4,7 @@
 </div>
 <br>
 <p align="center">
-  <a href="https://github.com/yamadashy/laravel-blade-minify-directive/actions"><img src="https://img.shields.io/github/workflow/status/yamadashy/laravel-blade-minify-directive/Tests?label=tests&logo=github" alt="Test Status"></a>
+  <a href="https://github.com/yamadashy/laravel-blade-minify-directive/actions"><img src="https://img.shields.io/github/actions/workflow/status/yamadashy/laravel-blade-minify-directive/tests.yml?branch=main&label=tests&logo=github" alt="Test Status"></a>
   <a href="https://packagist.org/packages/yamadashy/laravel-blade-minify-directive"><img src="https://poser.pugx.org/yamadashy/laravel-blade-minify-directive/v/stable.svg" alt="Latest Version"></a>
   <a href="https://github.com/yamadashy/laravel-blade-minify-directive/blob/master/LICENSE.md"><img src="https://poser.pugx.org/yamadashy/laravel-blade-minify-directive/license.svg" alt="License"></a>
 </p>
