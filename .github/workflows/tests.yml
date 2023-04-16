@@ -17,14 +17,18 @@ jobs:
       fail-fast: true
       matrix:
         php-version: ['7.2', '7.3', '7.4', '8.0', '8.1']
-        laravel-version: ['5.7.*', '5.8.*', '^6.0', '^7.0', '^8.0', '^9.0']
+        laravel-version: ['5.7.*', '5.8.*', '^6.0', '^7.0', '^8.0', '^9.0', '^10.0']
         exclude:
-          - { php-version: '7.2', laravel-version: '^9.0' }
           - { php-version: '7.2', laravel-version: '^8.0' }
+          - { php-version: '7.2', laravel-version: '^9.0' }
+          - { php-version: '7.2', laravel-version: '^10.0' }
           - { php-version: '7.3', laravel-version: '^9.0' }
+          - { php-version: '7.3', laravel-version: '^10.0' }
           - { php-version: '7.4', laravel-version: '^9.0' }
+          - { php-version: '7.4', laravel-version: '^10.0' }
           - { php-version: '8.0', laravel-version: '5.7.*' }
           - { php-version: '8.0', laravel-version: '5.8.*' }
+          - { php-version: '8.0', laravel-version: '^10.0' }
           - { php-version: '8.1', laravel-version: '5.7.*' }
           - { php-version: '8.1', laravel-version: '5.8.*' }
           - { php-version: '8.1', laravel-version: '^6.0' }
