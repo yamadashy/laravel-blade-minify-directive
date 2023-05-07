@@ -1,5 +1,5 @@
 includes:
-    - ./vendor/yamadashy/phpstan-formatter-friendly/extension.neon
+    - ./vendor/yamadashy/phpstan-friendly-formatter/extension.neon
 
 parameters:
     paths:
@@ -8,3 +8,4 @@ parameters:
     level: 9
     parallel:
         processTimeout: 1800.0
+    errorFormat: friendly
