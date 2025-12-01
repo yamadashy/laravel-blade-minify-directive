@@ -5,17 +5,13 @@ namespace Yamadashy\MinifyDirective\Tests;
 
 use Illuminate\View\Compilers\BladeCompiler;
 use LogicException;
+use PHPUnit\Framework\Attributes\DataProvider;
 use Yamadashy\MinifyDirective\MinifyDirectiveServiceProvider;
 
 class MinifyDirectiveTest extends TestCase
 {
 
-    /**
-     * @dataProvider dataProviderForTestMinifyDirective
-     * @param string $blade
-     * @param string $expectedCompiled
-     * @param string $expectedEval
-     */
+    #[DataProvider('dataProviderForTestMinifyDirective')]
     public function testMinifyDirective(string $blade, string $expectedCompiled, string $expectedEval): void
     {
         /** @var BladeCompiler $bladeCompiler */
@@ -34,7 +30,7 @@ class MinifyDirectiveTest extends TestCase
     /**
      * @return string[][]
      */
-    public function dataProviderForTestMinifyDirective(): array
+    public static function dataProviderForTestMinifyDirective(): array
     {
         return [
             [
@@ -211,11 +207,7 @@ class MinifyDirectiveTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider  dataProviderForTestBladeFile
-     * @param string $bladeFilePath
-     * @param string $expectedOutputFilePath
-     */
+    #[DataProvider('dataProviderForTestBladeFile')]
     public function testBladeFile(string $bladeFilePath, string $expectedOutputFilePath): void
     {
         $blade = file_get_contents($bladeFilePath);
@@ -239,7 +231,7 @@ class MinifyDirectiveTest extends TestCase
     /**
      * @return string[][]
      */
-    public function dataProviderForTestBladeFile(): array
+    public static function dataProviderForTestBladeFile(): array
     {
         return [
             [__DIR__.'/TestResources/test1.blade.php', __DIR__.'/TestResources/test1output.html'],

@@ -3,16 +3,14 @@ declare(strict_types=1);
 
 namespace Yamadashy\MinifyDirective\Tests;
 
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\TestCase;
 use Yamadashy\MinifyDirective\Minifier;
 
 class MinifierTest extends TestCase
 {
 
-    /**
-     * @dataProvider dataProviderForTestMinify
-     * @param string $originalHtml
-     * @param string $expectedMinified
-     */
+    #[DataProvider('dataProviderForTestMinify')]
     public function testMinify(string $originalHtml, string $expectedMinified): void
     {
         $minifiedHtml = Minifier::minify($originalHtml);
@@ -22,7 +20,7 @@ class MinifierTest extends TestCase
     /**
      * @return string[][]
      */
-    public function dataProviderForTestMinify(): array
+    public static function dataProviderForTestMinify(): array
     {
         return [
             [' <div> mini fied! </div>', '<div> mini fied!</div>'],
