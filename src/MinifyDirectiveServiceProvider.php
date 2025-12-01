@@ -10,7 +10,7 @@ class MinifyDirectiveServiceProvider extends ServiceProvider
 {
 
     public const MINIFY_START_DIRECTIVE_COMPILED = '<?php ob_start(); ?>';
-    public const MINIFY_END_DIRECTIVE_COMPILED = '<?php echo \Yamadashy\MinifyDirective\Minifier::minify(ob_get_clean()); ?>';
+    public const MINIFY_END_DIRECTIVE_COMPILED = '<?php echo \Yamadashy\MinifyDirective\Minifier::minify(ob_get_clean() ?: \'\'); ?>';
 
     /**
      * Bootstrap the application services.
