@@ -34,7 +34,7 @@ class MinifyDirectiveTest extends TestCase
     /**
      * @return string[][]
      */
-    public function dataProviderForTestMinifyDirective(): array
+    public static function dataProviderForTestMinifyDirective(): array
     {
         return [
             [
@@ -239,7 +239,7 @@ class MinifyDirectiveTest extends TestCase
     /**
      * @return string[][]
      */
-    public function dataProviderForTestBladeFile(): array
+    public static function dataProviderForTestBladeFile(): array
     {
         return [
             [__DIR__.'/TestResources/test1.blade.php', __DIR__.'/TestResources/test1output.html'],
